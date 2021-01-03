@@ -1,0 +1,20 @@
+{
+
+  "manifest_version": 2,
+  "name": "description",
+  "version": "1.0",
+
+  "description": "Adds alt text to all images on the page.",
+
+  "content_scripts": [
+    {
+	  "matches": ["*://*/*"],
+      "js": ["description.js"]
+    }
+  ],
+
+  "permissions": [
+    "https://api.ocr.space/parse/image*",
+    "webRequest"
+  ]
+}
