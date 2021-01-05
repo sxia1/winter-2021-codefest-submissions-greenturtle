@@ -1,6 +1,17 @@
-var KEY =  ""
+var KEY =  "881d410edc88957"
 var endpoint = "https://api.ocr.space/parse/image?apikey="+KEY;
 var images = document.getElementsByTagName("img");
+
+function insert_alt(image, endpoint, request_options){
+	fetch(endpoint, requestOptions)
+		.then(response => response.json())
+		.then(result => {
+			console.log(result);
+			var alt_text = result['ParsedResults'][0]['ParsedText'];
+			image.alt = alt_text;
+		})
+		.catch(error => console.log(error));
+}
 
 for(i = 0; i < images.length; i++){
 	var src = images[i].src;
@@ -8,6 +19,7 @@ for(i = 0; i < images.length; i++){
 	if(!image_url.startsWith("http")){
 		image_url = window.location.protocol + "//" + window.location.host + src;
 	}
+	var imagenode = images[i];
 	var alt_text;
 	
 	var myHeaders = new Headers();
@@ -31,12 +43,5 @@ for(i = 0; i < images.length; i++){
 		redirect: 'follow'
 	};
 
-	fetch(endpoint, requestOptions)
-		.then(response => response.json())
-		.then(result => {
-			console.log(result);
-			alt_text=result['ParsedResults'][0]['ParsedText'];
-			images[i].alt = alt_text;
-		})
-		.catch(error => console.log(error));
+	insert_alt(images[i], endpoint, requestOptions);
 }
