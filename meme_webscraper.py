@@ -39,7 +39,17 @@ def getcategoryimages(category_url, folder, dbx, start=1, increment=5):
 		wholeHtml = client.read()
 		souped = soup(wholeHtml, "html.parser")
 		images = souped.findAll("div", {"class":"item"})
+		
+		# skip to next page if no images (avoid waiting 5s for blank pages)
+		if len(images) == 0: 
+			print("no images, continuing...")
+			continue
+
 		#upload all images to dropbox
+
+		print("page {}, sleeping for 5s before uploading {} images".format(n, len(images)))
+		time.sleep(5)
+
 		for i in images:
 			url = i.img["data-src"]
 			filename = url.split("/")
@@ -48,10 +58,18 @@ def getcategoryimages(category_url, folder, dbx, start=1, increment=5):
 			if not url.endswith("gif") and not filename.startswith("long"):
 				url = url.replace("masonry", "newsfeed")
 				print(filename)
-				dbx.files_save_url(folder+"/"+filename, url)
+
+				try: 
+					dbx.files_save_url(folder+"/"+filename, url)
+					
+				except Exception as e:
+					print(e)
+
+	print("\nfinished {}, sleeping for 15s".format(folder))
+	time.sleep(15)
 
 def driver(KEY):
-	memeLink = "https://knowyourmeme.com/memes/popular"
+	memeLink = "https://knowyourmeme.com/memes/popular/page/2"
 	dbx = dropbox.Dropbox(KEY)
 	result = getcategories(memeLink, dbx)
 	folders = result[0]
@@ -59,4 +77,7 @@ def driver(KEY):
 	for x in range(len(category_urls)-1):
 		getcategoryimages(category_urls[x], folders[x], dbx, start=1, increment=5)
 
-driver(KEY)
+if __name__ == "__main__":
+    driver(KEY)
+
+
