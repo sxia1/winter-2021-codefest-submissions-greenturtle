@@ -6,11 +6,12 @@
 
 **@sxia1**, Xia, Sophia
 
-**@imtiaznyc1**, Rahman, Imtiaz
+**@JabirC**, Chowdhury, Jabir
 
 **@rachel-ng**, Ng, Rachel 
 
-**@JabirC**, Chowdhury, Jabir
+**@imtiaznyc1**, Rahman, Imtiaz
+
 
 ### Group info (check all that apply - add an X in the [ ])
 - [x] We are a Daedalus Google Mentorship group
