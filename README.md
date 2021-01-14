@@ -1,11 +1,19 @@
 # Hunter Codefest 2020-2021
 
 # Team Info
-### Team name: 
+### Team name: GreenTurtle
 ### Team members (format: GitHub username, last name, first name):
 
+**@sxia1**, Xia, Sophia
+
+**@imtiaznyc1**, Rahman, Imtiaz
+
+**@rachel-ng**, Ng, Rachel 
+
+**@JabirC**, Chowdhury, Jabir
+
 ### Group info (check all that apply - add an X in the [ ])
-- [ ] We are a Daedalus Google Mentorship group
+- [x] We are a Daedalus Google Mentorship group
 - [ ] We are a beginner group (only completed CSCI 12700)
 
 # General Info
