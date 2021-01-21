@@ -1,0 +1,20 @@
+{
+
+  "manifest_version": 2,
+  "name": "ml",
+  "version": "1.0",
+
+  "description": "Adds alt text to all images on the page.",
+
+  "content_scripts": [
+    {
+	  "matches": ["*://*/*"],
+      "js": ["description.js"]
+    }
+  ],
+
+  "permissions": [
+    "https://0.0.0.0:5000*",
+    "webRequest"
+  ]
+}
