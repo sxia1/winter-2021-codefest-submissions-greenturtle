@@ -26,4 +26,12 @@
    ```
 5. get api keys 
 
-# How to run
+# How to run on Firefox
+
+1. Go to about:debugging page on Firefox
+
+2. Click on "This Firefox" and then click on "Load Temporary Add-on..."
+
+3. You will be prompted to choose a file. In the description folder of the cloned repository select description.js
+
+4. The extension is now installed until you restart Firefox
