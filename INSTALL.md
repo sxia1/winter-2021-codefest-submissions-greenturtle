@@ -13,7 +13,7 @@
     $ cd winter-2021-codefest-submissions-greenturtle
     ```
 
-3. Activate your virtual environment
+3. Activate your virtual environment and upgrade `pip`
     ```
     $ . path/to/venv/bin/activate
 
