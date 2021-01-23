@@ -26,7 +26,17 @@
    ```
 5. get api keys 
 
-# How to run on Firefox
+# How to run 
+
+## Server 
+
+1. Start the server 
+
+    ```
+   (venv) $ python app.py
+    ```
+
+## Firefox Extension 
 
 1. Go to about:debugging page on Firefox
 
@@ -35,3 +45,13 @@
 3. You will be prompted to choose a file. In the description folder of the cloned repository select description.js
 
 4. The extension is now installed until you restart Firefox
+
+
+## Chrome Extension 
+1. Go to chrome://extensions/
+
+2. Click on "Load unpacked"
+
+3. You will be prompted to choose a file / folder. Select the folder `description`
+
+4. The extension is now installed 
