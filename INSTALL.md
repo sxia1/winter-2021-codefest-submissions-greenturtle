@@ -46,6 +46,12 @@
    (venv) $ python app.py
     ```
 
+3. Open https://0.0.0.0:5000/ It will tell you that your connection isn't private.   
+    **Firefox**:  
+    **Chrome**:  
+    - Click on "Advanced"
+    - Click on "Proceed to 0.0.0.0 (unsafe)" 
+
 ## Firefox Extension 
 
 1. Go to about:debugging page on Firefox
