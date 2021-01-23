@@ -48,9 +48,13 @@
 
 
 ## Chrome Extension 
+
 1. Go to chrome://extensions/
 
-2. Click on "Load unpacked"
+2. Exnsure that "Developer mode" is on by checking the toggle in the top right-hand corner 
+    <sub>This allows you to load "unpacked directories" as if though they were packaged extensions</sub>
+
+3. Click on "Load unpacked" to load an extension 
 
 3. You will be prompted to choose a file / folder. Select the folder `description`
 
