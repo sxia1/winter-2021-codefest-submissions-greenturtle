@@ -2,35 +2,45 @@
 
 # How to install
 
-1. clone the repo 
+1. Clone the repo 
     ```
     $ git clone git@github.com:huntercodefest/winter-2021-codefest-submissions-greenturtle.git 
     ```
 
-2. cd into folder 
+2. `cd` into folder 
 
     ```
     $ cd winter-2021-codefest-submissions-greenturtle
     ```
 
-3. activate virtual environment
+3. Activate your virtual environment
     ```
     $ . path/to/venv/bin/activate
 
     (venv) $ pip install --upgrade pip
     ```
 
-4. install dependencies with the requirements.txt 
+4. Install the dependencies with the requirements.txt 
    ```
    (venv) $ pip install -r requirements.txt
    ```
-5. get api keys 
+5. Get API keys 
+
+
 
 # How to run 
 
 ## Server 
 
-1. Start the server 
+1. Ensure you're in your virtual environment, or activate it 
+
+    ```
+    $ . path/to/venv/bin/activate
+
+    (venv) $ pip install --upgrade pip
+    ```
+
+2. Start the server 
 
     ```
    (venv) $ python app.py
@@ -51,7 +61,7 @@
 
 1. Go to chrome://extensions/
 
-2. Exnsure that "Developer mode" is on by checking the toggle in the top right-hand corner 
+2. Exnsure that "Developer mode" is on by checking the toggle in the top right-hand corner  
     <sub>This allows you to load "unpacked directories" as if though they were packaged extensions</sub>
 
 3. Click on "Load unpacked" to load an extension 
