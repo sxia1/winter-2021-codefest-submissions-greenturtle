@@ -32,25 +32,7 @@
 
 ## Server 
 
-1. Ensure you're in your virtual environment, or activate it 
-
-    ```
-    $ . path/to/venv/bin/activate
-
-    (venv) $ pip install --upgrade pip
-    ```
-
-2. Start the server 
-
-    ```
-   (venv) $ python app.py
-    ```
-
-3. Open https://0.0.0.0:5000/ It will tell you that your connection isn't private.   
-    **Firefox**:  
-    **Chrome**:  
-    - Click on "Advanced"
-    - Click on "Proceed to 0.0.0.0 (unsafe)" 
+We have it hosted on [Heroku](https://greenturtle.herokuapp.com/) (https://greenturtle.herokuapp.com/) and the extension uses it :) 
 
 ## Firefox Extension 
 
