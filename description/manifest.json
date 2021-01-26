@@ -15,6 +15,7 @@
 
   "permissions": [
     "https://api.ocr.space/parse/image*",
+    "https://greenturtle.herokuapp.com*",
     "webRequest"
   ]
 }
