@@ -3,7 +3,7 @@ var ocr_endpoint = "https://api.ocr.space/parse/image?apikey="+KEY;
 var ml_endpoint = "https://greenturtle.herokuapp.com/predict"; 
 var images = document.getElementsByTagName("img");
 
-function ocr_request(endpoint){
+async function ocr_request(endpoint){
 	var myHeaders = new Headers();
 	myHeaders.append("apikey", KEY);
 	myHeaders.append("Accept", "application/json");
@@ -25,14 +25,22 @@ function ocr_request(endpoint){
 		redirect: 'follow'
 	};
 
-	var ocr_text = fetch(endpoint, requestOptions)
+    var ocr_text = await fetch(endpoint, requestOptions)
 		.then(response => response.json())
-		.then(result => result)
-		.catch(error => console.log(error));
-    return ocr_text['ParsedResults'][0]['ParsedText'];
+		.then(result => {
+			return result['ParsedResults'][0]['ParsedText'];
+		})
+		.catch(error => console.log(error))
+		.catch(error => {
+            console.log(error);
+            return "";
+        });
+
+    // console.log(ocr_text);
+    return ocr_text;
 }
 
-function ml_request(endpoint){
+async function ml_request(endpoint){
     var myHeaders = new Headers();
     myHeaders.append("Access-Control-Allow-Origin", "*");
     myHeaders.append("Accept", "application/json");
@@ -47,21 +55,26 @@ function ml_request(endpoint){
         rejectUnauthorized: false
     };
 
-	var prediction = fetch(endpoint, requestOptions)
+	var prediction = await fetch(endpoint, requestOptions)
 		.then(response => response.json())
-		.then(result => result)
+		.then(result => {
+			// console.log(result);
+			return result['prediction'];
+		})
 		.catch(error => console.log(error));
-    return prediction['prediction'];
+
+    // console.log(prediction);
+    return prediction;
 }
 
-function insert_alt(image){
+async function insert_alt(image){
     console.log("insert alt");
-    var prediction = ml_request(ml_endpoint);
-    console.log("prediction: " + prediction);
-    var ocr_text = ocr_request(ocr_endpoint);
-    console.log("ocr: " + ocr_text);
+    var prediction = await ml_request(ml_endpoint);
+    // console.log("prediction: " + prediction);
+    var ocr_text = await ocr_request(ocr_endpoint);
+    // console.log("ocr: " + ocr_text);
 
-    var alt_text = prediction + ". " + ocr_text; 
+    var alt_text = prediction + " " + ocr_text; 
     console.log(alt_text);
 
     image.alt = alt_text;
