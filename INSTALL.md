@@ -24,7 +24,9 @@
    ```
    (venv) $ pip install -r requirements.txt
    ```
-5. Get API keys 
+5. Register for an API key  
+    We use the [OCR.SPACE Free OCR API](http://ocr.space/OCRAPI). [Register here](http://eepurl.com/bOLOcf).  
+    <sub>If that link doesn't work, go [here](http://ocr.space/OCRAPI) (http://ocr.space/OCRAPI) and check for the sign up link in the API Plan chart under "Free"</sub>
 
 
 
