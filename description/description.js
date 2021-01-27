@@ -6,7 +6,7 @@ var images = document.getElementsByTagName("img");
 async function ocr_request(endpoint,image_url){
 	var myHeaders = new Headers();
 	myHeaders.append("apikey", KEY);
-	myHeaders.append("Accept", "application/json"`);
+	myHeaders.append("Accept", "application/json");
 	myHeaders.append("Access-Control-Allow-Origin", "*");
 
 	var formdata = new FormData();
