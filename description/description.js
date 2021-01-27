@@ -3,7 +3,7 @@ var ocr_endpoint = "https://api.ocr.space/parse/image?apikey="+KEY;
 var ml_endpoint = "https://greenturtle.herokuapp.com/predict"; 
 var images = document.getElementsByTagName("img");
 
-async function ocr_request(endpoint){
+async function ocr_request(endpoint,image_url){
 	var myHeaders = new Headers();
 	myHeaders.append("apikey", KEY);
 	myHeaders.append("Accept", "application/json");
@@ -40,7 +40,7 @@ async function ocr_request(endpoint){
     return ocr_text;
 }
 
-async function ml_request(endpoint){
+async function ml_request(endpoint,image_url){
     var myHeaders = new Headers();
     myHeaders.append("Access-Control-Allow-Origin", "*");
     myHeaders.append("Accept", "application/json");
@@ -67,28 +67,23 @@ async function ml_request(endpoint){
     return prediction;
 }
 
-async function insert_alt(image){
+async function insert_alt(image, image_url){
     console.log("insert alt");
-    var prediction = await ml_request(ml_endpoint);
-    // console.log("prediction: " + prediction);
-    var ocr_text = await ocr_request(ocr_endpoint);
-    // console.log("ocr: " + ocr_text);
+    var prediction = await ml_request(ml_endpoint,image_url);
+    var ocr_text = await ocr_request(ocr_endpoint,image_url);
 
     var alt_text = prediction + " " + ocr_text; 
-    console.log(alt_text);
-
     image.alt = alt_text;
 }
 
 for(i = 0; i < images.length; i++){
-	var src = images[i].src;
+	var imagenode = images[i];
+	var src = imagenode.src;
 	var image_url = src;
 	if(!image_url.startsWith("http")){
 		image_url = window.location.protocol + "//" + window.location.host + src;
 	}
-	var imagenode = images[i];
-	
 
-	insert_alt(images[i]);
+	insert_alt(imagenode, image_url);
 }
 
