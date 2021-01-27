@@ -1,4 +1,4 @@
-var KEY =  "881d410edc88957"
+var KEY =  "REPLACE_WITH_API_KEY_HERE"
 var ocr_endpoint = "https://api.ocr.space/parse/image?apikey="+KEY;
 var ml_endpoint = "https://greenturtle.herokuapp.com/predict"; 
 var images = document.getElementsByTagName("img");
@@ -6,7 +6,7 @@ var images = document.getElementsByTagName("img");
 async function ocr_request(endpoint,image_url){
 	var myHeaders = new Headers();
 	myHeaders.append("apikey", KEY);
-	myHeaders.append("Accept", "application/json");
+	myHeaders.append("Accept", "application/json"`);
 	myHeaders.append("Access-Control-Allow-Origin", "*");
 
 	var formdata = new FormData();
