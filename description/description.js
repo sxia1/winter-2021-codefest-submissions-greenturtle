@@ -1,4 +1,4 @@
-var KEY =  "REPLACE_WITH_API_KEY_HERE"
+var KEY =  "REPLACE_WITH_API_KEY_HERE";
 var ocr_endpoint = "https://api.ocr.space/parse/image?apikey="+KEY;
 var ml_endpoint = "https://greenturtle.herokuapp.com/predict"; 
 var images = document.getElementsByTagName("img");
