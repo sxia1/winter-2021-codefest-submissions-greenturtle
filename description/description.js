@@ -71,6 +71,7 @@ async function insert_alt(image, image_url){
     console.log("insert alt");
     var prediction = await ml_request(ml_endpoint,image_url);
     var ocr_text = await ocr_request(ocr_endpoint,image_url);
+    ocr_text = ocr_text || "";
 
     var alt_text = prediction + " " + ocr_text; 
     image.alt = alt_text;
