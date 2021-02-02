@@ -7,23 +7,11 @@
     $ git clone git@github.com:huntercodefest/winter-2021-codefest-submissions-greenturtle.git 
     ```
 
-2. `cd` into folder 
+2. `cd` into the folder 
 
     ```
     $ cd winter-2021-codefest-submissions-greenturtle
     ```
-
-3. Activate your virtual environment and upgrade `pip`
-    ```
-    $ . path/to/venv/bin/activate
-
-    (venv) $ pip install --upgrade pip
-    ```
-
-4. Install the dependencies with the requirements.txt 
-   ```
-   (venv) $ pip install -r requirements.txt
-   ```
 
 # How to run 
 
